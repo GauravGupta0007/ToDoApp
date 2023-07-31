@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<div class="container">
+
+    <form>
+        <div class="mb-3 mt-5">
+            <label for="task" class="form-label">Task</label> <br>
+            <input type="text" id="task" name="task"  style="width: 50%;" >
+        </div>
+        <div class="mb-3">
+            <label for="task" class="form-label">Due Date</label> <br>
+            <input type="datetime" id="due_date" , name="due_date" style="width: 50%;" >
+        </div>
+        <div class="mb-3">
+            <label for="task" class="form-label">Status</label> <br>
+            <select class="form-control" style="width: 50%;" id="status">
+                <option>In Progress</option>
+                <option>Completed</option>
+                <option>Not Started</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} My Tasks
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row text-center m-4">
+        <h1>TODO List </h1>
+    </div>
+
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Task No</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tk in tsk %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{tk.task}}</td>
+                    <td>{{tk.due_date}}</td>
+                    <td>{{tk.status}}</td>
+                    <td> <button type="button" class="btn btn-warning"> <a href="/edit"
+                                style="text-decoration: none; color: inherit;">Edit</a></button>
+                    </td>
+                    <td> <button type="button" class="btn btn-danger"> <a href="/delete"
+                                style="text-decoration: none; color: inherit;">Delete</a></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-success col-2 m-auto mt-5"> <a href="/add"
+                style="text-decoration: none; color: inherit;">Add Task</a></button>
+    </div>
+</div>
+
+{% endblock %}
